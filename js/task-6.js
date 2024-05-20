@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	destroyButton.addEventListener('click', destroyBoxes)
 
 	function createBoxes(amount) {
-		boxes.innerHTML = '' 
-		let size = 30 
+		const fragment = document.createDocumentFragment()
+		let size = 30
 
 		for (let i = 0; i < amount; i++) {
 			const box = document.createElement('div')
@@ -36,6 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			size += 10
 		}
+
+		boxes.innerHTML = ''
+		boxes.appendChild(fragment)
 	}
 
 	function destroyBoxes() {
