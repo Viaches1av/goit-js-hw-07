@@ -23,23 +23,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	destroyButton.addEventListener('click', destroyBoxes)
 
-	function createBoxes(amount) {
-		const fragment = document.createDocumentFragment()
-		let size = 30
+function createBoxes(amount) {
+	const fragment = document.createDocumentFragment()
+	let size = 30
 
-		for (let i = 0; i < amount; i++) {
-			const box = document.createElement('div')
-			box.style.width = `${size}px`
-			box.style.height = `${size}px`
-			box.style.backgroundColor = getRandomHexColor()
-			boxes.appendChild(box)
-
-			size += 10
-		}
-
-		boxes.innerHTML = ''
-		boxes.appendChild(fragment)
+	for (let i = 0; i < amount; i++) {
+		const box = document.createElement('div')
+		box.style.width = ` ${size} px`
+		box.style.height = ` ${size} px`
+		box.style.backgroundColor = getRandomHexColor()
+		fragment.appendChild(box)
+		size += 10
 	}
+
+	boxes.innerHTML = ''
+	boxes.appendChild(fragment)
+}
+
 
 	function destroyBoxes() {
 		boxes.innerHTML = ''
